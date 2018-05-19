@@ -1,0 +1,6 @@
+body {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Fira Mono';
+}
