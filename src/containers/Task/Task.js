@@ -19,7 +19,7 @@ const Task = ({ taskValue, taskId, deleteTask, index }) => {
   console.log(index);
   return (
     <div className="task-wrapper">
-      <div>badge</div>
+      <div>badg</div>
       <div className="task">{taskValue}</div>
       <Ionicon
         onClick={() => deleteTask(index)}
