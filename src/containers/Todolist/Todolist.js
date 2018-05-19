@@ -2,7 +2,7 @@
  * Packages
  */
 import React, { Component } from 'react';
-//import { Button } from 'reactstrap';
+import Fade from 'react-reveal/Fade';
 
 /**
  * Styles
@@ -23,8 +23,10 @@ class Todolist extends Component {
   render() {
     return (
       <div className="todolist">
-        <Title>best todolist in the world</Title>
-        <Form />
+        <Fade>
+          <Title>minimalist todolist</Title>
+          <Form />
+        </Fade>
         <TasksList />
       </div>
     );

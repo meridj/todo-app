@@ -3,12 +3,17 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Fade from 'react-reveal/Fade';
+import { Button, ButtonGroup } from 'reactstrap';
 
 /**
  * Styles
  */
 import './TasksList.css';
+
+/**
+ * Actions
+ */
+import * as actions from '../../actions';
 
 /**
  * Containers
@@ -17,10 +22,15 @@ import { Task } from '../';
 
 class TasksList extends Component {
   render() {
-    const { tasks } = this.props;
+    const { tasks, deleteTasks } = this.props;
 
     return tasks.length ? (
       <div className="taskslist">
+        <div className="buttons-tasklist">
+          <Button onClick={() => deleteTasks()} size="sm">
+            Remove all
+          </Button>
+        </div>
         {tasks.map((elem, key) => (
           <Task
             key={key}
@@ -38,4 +48,4 @@ function mapStateToProps({ tasks }) {
   return { tasks };
 }
 
-export default connect(mapStateToProps, null)(TasksList);
+export default connect(mapStateToProps, actions)(TasksList);

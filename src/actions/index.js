@@ -5,6 +5,7 @@ import {
   HANDLE_FIELD_VALUE,
   HANDLE_SUBMIT_TASK,
   DELETE_TASK,
+  DELETE_TASKS,
   TOGGLE_TASK_STATE
 } from './types';
 
@@ -25,6 +26,10 @@ export const handleSubmitTask = newTask => {
 
 export const deleteTask = index => {
   return { type: DELETE_TASK, payload: index };
+};
+
+export const deleteTasks = () => {
+  return { type: DELETE_TASKS };
 };
 
 export const toggleTaskState = index => {

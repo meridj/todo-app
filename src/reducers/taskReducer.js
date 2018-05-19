@@ -4,6 +4,7 @@
 import {
   HANDLE_SUBMIT_TASK,
   DELETE_TASK,
+  DELETE_TASKS,
   TOGGLE_TASK_STATE
 } from '../actions/types';
 
@@ -14,6 +15,8 @@ export default (state = [], action) => {
     case HANDLE_SUBMIT_TASK:
       newTasks = [action.payload, ...state];
       return newTasks;
+    case DELETE_TASKS:
+      return [];
     case DELETE_TASK:
       newTasks = [...state];
       newTasks.splice(action.payload, 1);
