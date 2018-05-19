@@ -1,7 +1,12 @@
 /**
  * Actions
  */
-import { HANDLE_FIELD_VALUE, HANDLE_SUBMIT_TASK, DELETE_TASK } from './types';
+import {
+  HANDLE_FIELD_VALUE,
+  HANDLE_SUBMIT_TASK,
+  DELETE_TASK,
+  TOGGLE_TASK_STATE
+} from './types';
 
 /**
  * Form
@@ -18,6 +23,10 @@ export const handleSubmitTask = newTask => {
   return { type: HANDLE_SUBMIT_TASK, payload: newTask };
 };
 
-export const deleteTask = id => {
-  return { type: DELETE_TASK, payload: id };
+export const deleteTask = index => {
+  return { type: DELETE_TASK, payload: index };
+};
+
+export const toggleTaskState = index => {
+  return { type: TOGGLE_TASK_STATE, payload: index };
 };

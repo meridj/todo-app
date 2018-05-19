@@ -9,12 +9,31 @@
 
 .task {
   font-size: 1.3em;
+  transition: 0.5s;
 }
 
-.close {
+.task-done {
+  transition: 0.5s;
+  text-decoration: line-through;
+  text-decoration-color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.ionicons {
   cursor: pointer;
 }
 
-.close:hover {
+.completed-button {
   cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.completed-button:hover {
+  border: 1px solid rgba(0, 0, 0, 1);
 }

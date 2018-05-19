@@ -15,18 +15,33 @@ import * as actions from '../../actions';
  */
 import './Task.css';
 
-const Task = ({ taskValue, taskId, deleteTask, index }) => {
-  console.log(index);
+const Task = ({
+  taskValue,
+  taskId,
+  deleteTask,
+  index,
+  isCompleted,
+  toggleTaskState
+}) => {
   return (
     <div className="task-wrapper">
-      <div>badg</div>
-      <div className="task">{taskValue}</div>
+      <div onClick={() => toggleTaskState(index)} className="completed-button">
+        {isCompleted && (
+          <Ionicon
+            className="ionicons"
+            icon="ios-checkmark"
+            fontSize="30px"
+            color="green"
+          />
+        )}
+      </div>
+      <div className={isCompleted ? 'task task-done' : 'task'}>{taskValue}</div>
       <Ionicon
         onClick={() => deleteTask(index)}
-        className="close"
+        className="ionicons delete"
         icon="ios-close"
         fontSize="30px"
-        color="black"
+        color="red"
       />
     </div>
   );

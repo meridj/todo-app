@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Fade from 'react-reveal/Fade';
 
 /**
  * Styles
@@ -17,18 +18,19 @@ import { Task } from '../';
 class TasksList extends Component {
   render() {
     const { tasks } = this.props;
-    return (
+
+    return tasks.length ? (
       <div className="taskslist">
         {tasks.map((elem, key) => (
           <Task
             key={key}
             index={key}
-            taskId={elem.id}
+            isCompleted={elem.done}
             taskValue={elem.taskValue}
           />
         ))}
       </div>
-    );
+    ) : null;
   }
 }
 
